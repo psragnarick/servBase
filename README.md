@@ -3,4 +3,3 @@ An app connected to a database that has the contact information for the nearest 
 
 Must be run in Node.js enviroment
 
-Note: will be recoded in Scala
