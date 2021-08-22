@@ -4,7 +4,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+
+import static java.util.Collections.singletonList;
+import static org.mockito.BDDMockito.given;
 
 class locationsControllerTest {
 
@@ -17,10 +20,21 @@ class locationsControllerTest {
     }
 
     @Test
-    void getAlllocations() {
+    void getAlllocations() throws Exception {
+        location location = new location();
+        location.setName("Nani");
+
+        List<location> allLocations = singletonList(location);
+
+        given(locationsController.getAlllocations()).willReturn(allLocations);
+
     }
 
     @Test
-    void getlocationByID() {
+    void getlocationByID() throws Exception {
+        location location = new location();
+        location.setName("Naniga");
+
+        given(locationsController.getlocationByID(location.getID())).willReturn(location);
     }
 }
